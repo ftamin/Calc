@@ -1,2 +1,9 @@
 language: csharp
 solution: C#/MyCalculator.sln
+install:
+  - nuget restore C#/MyCalculator.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release C#/MyCalculator.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./C#/MyCalculatorUnitTest/bin/Release/MyCalculatorUnitTest.dll
+  
