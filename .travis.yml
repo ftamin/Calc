@@ -1,9 +1,9 @@
 language: csharp
-solution: C#/MyCalculator.sln
+solution: MyCalculator.sln
 install:
-  - nuget restore C#/MyCalculator.sln
+  - nuget restore MyCalculator.sln
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release C#/MyCalculator.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./C#/MyCalculatorUnitTest/bin/Release/MyCalculatorUnitTest.dll
+  - xbuild /p:Configuration=Release /MyCalculator.sln
+  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./MyCalculatorUnitTest/bin/Release/MyCalculatorUnitTest.dll
   
