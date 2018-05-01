@@ -7,3 +7,12 @@ C#/.vs/MyCalculator/v15/Server/sqlite3/storage.ide-shm
 C#/.vs/MyCalculator/v15/Server/sqlite3/db.lock
 C#/.vs/MyCalculator/v15/Server/sqlite3/storage.ide
 C#/.vs/MyCalculator/v15/.suo
+MyCalculator/bin/
+MyCalculator/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+MyCalculator/obj/
+MyCalculatorUnitTest/bin/Debug/Mono.Cecil.dll
+MyCalculatorUnitTest/bin/Debug/MyCalculator.exe
+MyCalculatorUnitTest/bin/
+MyCalculatorUnitTest/obj/
+packages/
+.vs/
