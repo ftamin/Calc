@@ -6,4 +6,4 @@ install:
 script:
   - xbuild /p:Configuration=Release MyCalculator.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./MyCalculatorUnitTest/bin/Release/MyCalculatorUnitTest.dll
-  
+  - mono ./packages/OpenCover.4.6.519/OpenCover.Console.exe -target:"dotnet.exe" -targetargs:"test -c Release ./MyCalculatorUnitTest/MyCalculatorUnitTest.csproj" -hideskipped:File -oldStyle -output:./coverage.xml -filter:"+[MyCalculator]*" -register:user
