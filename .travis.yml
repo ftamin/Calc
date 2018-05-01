@@ -3,7 +3,8 @@ solution: MyCalculator.sln
 install:
   - nuget restore MyCalculator.sln
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
+  - nuget install OpenCover -Version 4.6.519 -outputdirectory opencover
 script:
   - xbuild /p:Configuration=Release MyCalculator.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./MyCalculatorUnitTest/bin/Release/MyCalculatorUnitTest.dll
-  - mono ./packages/OpenCover.4.6.519/OpenCover.Console.exe -target:"dotnet.exe" -targetargs:"test -c Release ./MyCalculatorUnitTest/MyCalculatorUnitTest.csproj" -hideskipped:File -oldStyle -output:./coverage.xml -filter:"+[MyCalculator]*" -register:user
+  - mono ./opencover/OpenCover.4.6.519/tools/OpenCover.Console.exe -target:"dotnet.exe" -targetargs:"test -c Release ./MyCalculatorUnitTest/MyCalculatorUnitTest.csproj" -hideskipped:File -oldStyle -output:./coverage.xml -filter:"+[MyCalculator]*" -register:user
